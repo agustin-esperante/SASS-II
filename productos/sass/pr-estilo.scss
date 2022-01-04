@@ -1,0 +1,66 @@
+/* producto */
+$color-gb: linear-gradient( to left ,black, rgb(24, 24, 24));
+$color-bg: linear-gradient( to left, rgb(24, 24, 24) ,black );
+$color-wg: linear-gradient( to left ,rgb(160, 160, 160) ,white );
+$color-gold: rgb(160, 130, 70);
+
+.row{
+  display: inline-flex;
+}
+
+.producto-img{
+  text-align: center;
+  display: inline-flex;
+  width: 70%;
+  margin: 30px;
+  border: 5px solid $color-gold;
+}
+
+.btn{
+  &-comprar{
+    background-image: $color-gb;
+    color: white;
+    border: outset $color-gold;
+    margin: 15px 0px;
+    width: 40%;
+    height: 15%;   
+  }
+  &-comprar:hover{
+    background-image: $color-wg;
+    color: black;
+    border: inset $color-gold;
+  }
+}
+
+.video{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%; 
+}
+
+.caracteristicas{
+  text-align: center;
+  &-li{
+    padding: 1px;
+  }
+}
+
+@media(max-width: 700px){
+  .imagen{
+    width: 50%;
+  }
+  .producto{
+    &-img{
+      display: inline-flex;
+      width: 80%;
+      margin: 10px;
+    }
+    &-name{
+      overflow:visible;
+      width: 50%; 
+    }
+  }
+  .btn-comprar{
+    width: 40%;
+  }
+}

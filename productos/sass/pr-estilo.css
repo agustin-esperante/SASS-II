@@ -1,0 +1,68 @@
+/* producto */
+.row {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.producto-img {
+  text-align: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 70%;
+  margin: 30px;
+  border: 5px solid #a08246;
+}
+
+.btn-comprar {
+  background-image: -webkit-gradient(linear, right top, left top, from(black), to(#181818));
+  background-image: linear-gradient(to left, black, #181818);
+  color: white;
+  border: outset #a08246;
+  margin: 15px 0px;
+  width: 40%;
+  height: 15%;
+}
+
+.btn-comprar:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(#a0a0a0), to(white));
+  background-image: linear-gradient(to left, #a0a0a0, white);
+  color: black;
+  border: inset #a08246;
+}
+
+.video {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.caracteristicas {
+  text-align: center;
+}
+
+.caracteristicas-li {
+  padding: 1px;
+}
+
+@media (max-width: 700px) {
+  .imagen {
+    width: 50%;
+  }
+  .producto-img {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: 80%;
+    margin: 10px;
+  }
+  .producto-name {
+    overflow: visible;
+    width: 50%;
+  }
+  .btn-comprar {
+    width: 40%;
+  }
+}
+/*# sourceMappingURL=pr-estilo.css.map */

@@ -1,0 +1,280 @@
+/* general */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: century gothic;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+/* variables */
+$color-gb: linear-gradient( to left ,black, rgb(24, 24, 24));
+$color-bg: linear-gradient( to left, rgb(24, 24, 24) ,black );
+$color-wg: linear-gradient( to left ,rgb(160, 160, 160) ,white );
+$color-gold: rgb(160, 130, 70);
+
+$clrs: (
+    gr-bk: linear-gradient( to left ,black, rgb(24, 24, 24)),
+    bk-gr: linear-gradient( to left, rgb(24, 24, 24) ,black ),
+    wh-gr: linear-gradient( to left ,rgb(160, 160, 160) ,white ),
+    gld: rgb(160, 130, 70)
+);
+
+/* @keyframes navbar{
+    0% {
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+} */
+
+body{
+    color: white;
+    background-image: map-get($clrs , bk-gr);
+    animation: navbar 2s linear 0s none;
+}
+
+a{ 
+    text-decoration: none;
+    color: map-get($clrs , gld );
+}
+
+a:hover{ 
+    text-decoration: none;
+    color: rgb(0, 255, 150);
+}
+
+/* header */
+
+.logo{
+    &-header img{
+        width: 90px;
+    }
+    &-header{
+        border: none;
+    }
+}
+
+header{
+    position: sticky;
+    top: 0px;
+    background: map-get($clrs , bk-gr);
+    border-bottom: 3px solid map-get($clrs , gld );
+}
+
+li{
+    list-style: none;
+    width: 100%;
+}
+
+@mixin nav-btn {
+    color: white;
+    background-image: map-get($clrs, gr-bk);
+    border: 3px outset map-get($clrs , gld);
+}
+
+.hover-nav{
+    @include nav-btn;
+    margin: 2px;
+    padding: 7%;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: unset;
+    &:hover{
+        background-image: map-get($clrs , wh-gr);
+        color: black;
+        border: inset map-get($clrs , gld);
+    }
+}
+
+.header ul{
+    display: flex;
+    align-items: center;
+    padding: 0.1%;
+    background-image: map-get($clrs , bk-gr);
+}
+
+@mixin bsc-cnto {
+    color: white;
+    background-image: map-get($clrs , gr-bk);
+    border: 3px inset map-get($clrs , gld);
+}
+
+.buscar{
+    @include bsc-cnto;
+    margin: 2px;
+    padding: 7%;
+    border-radius: 50px;
+    &:hover{
+        color: black;
+        background-image: map-get($clrs, wh-gr);
+        border: 3px outset map-get($clrs , gld);
+    }
+}
+
+/* destacado */
+
+.destacado{
+    width: 50%;
+    background: white;
+}
+
+#destacado{
+    text-align: center;
+}
+
+.back-destacado{
+    background: white;
+}
+
+/* productos */
+
+.grid{
+    &-container{
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: repeat(3, 300px);
+        gap: 50px 10px;
+        padding: 15px;
+        width: 97%;
+    }
+    &-item{
+        width: 90%;
+        height: 100%;
+        align-self: center;
+        text-align: center;
+        background: white;
+        padding: 20px;
+        overflow: hidden;
+        border: 5px solid $color-gold;
+    }
+    &-item:hover{
+        margin: 1px 15px 15px 15px;
+        border: 5px outset map-get($clrs , gld);
+    }
+}
+
+.producto img{
+    width: 100px;
+    height: auto;
+    margin: 5px;
+}
+
+.pags{
+    width: 100%;
+    text-align: center;
+    border: outset map-get($clrs , gld);
+}
+
+/* contacto */
+
+#contacto{
+    padding: 30px;
+    text-align: center;
+    & input{
+        @include bsc-cnto;
+        margin: 5px;
+        padding: 5px;
+        width: 60%;
+    }
+    & input:hover{
+        @extend .buscar:hover;
+    }
+    & textarea{
+        @extend input ;
+    }
+    & textarea:hover{
+        @extend .buscar:hover;
+    }
+}
+
+.btn-enviar{
+    @include nav-btn;
+    margin: 5px;
+    padding: 5px;
+    width: 15%;
+    height: 40px;
+    &:hover{
+        @extend .hover-nav:hover;
+    }
+}
+
+.imag-contacto{
+    width: 5%;
+    height: auto;
+    background-color: white;
+    border-radius: 50px;
+} 
+
+/* pie de pagina */
+footer{
+    text-align: center;
+    color: rgb(100, 100, 100);
+    background: black;
+    border-top: 1px solid map-get($clrs , gld);
+}
+
+@media(max-width: 700px){
+    /* header */
+    .logo-header img{
+        width: 2.5em;
+    }
+    .hover-nav{
+        border: 3px outset map-get($clrs , gld);
+        padding: 0.3em;   
+    }
+    .header ul{
+        padding: 0.5em;
+    } 
+    .buscar{
+        padding: 0.5em;
+        margin: 0.1em;
+    }
+    /* destacado */
+    .destacado{
+        width: 20em;
+    }
+    /* productos */
+    .grid{
+        &-container{
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(6, 17em);
+            gap: 25px 10px;
+        }
+        &-item{
+            padding: 10px;
+            overflow: hidden;
+        }
+    }
+    .producto img{
+        width: 6em;
+        margin: 3px;
+    }
+    /* contacto */
+    #contacto{
+        padding: 10px;
+        text-align: center;
+        & input{
+            margin: 5px;
+            padding: 0.7em;
+            width: 80%;
+        }
+        & textarea{
+            margin: 5px;
+            padding: 0.5em;
+            height: 7em;
+            width: 80%;
+        }
+    }
+
+    .btn-enviar{
+        margin: 5px;
+        width: 25%;
+        height: 3em;
+    }
+    .imag-contacto{
+        width: 10%;
+        background-color: white;
+    } 
+}
