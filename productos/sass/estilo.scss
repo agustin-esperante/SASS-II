@@ -129,6 +129,11 @@ li{
 
 /* productos */
 
+#productos{
+    border-top: 4px solid map-get($clrs , gld );
+    border-bottom: 4px solid map-get($clrs , gld );
+}
+
 .grid{
     &-container{
         display: grid;
@@ -136,7 +141,7 @@ li{
         grid-template-rows: repeat(3, 300px);
         gap: 50px 10px;
         padding: 15px;
-        width: 97%;
+        width: 100%;
     }
     &-item{
         width: 90%;
@@ -158,12 +163,6 @@ li{
     width: 100px;
     height: auto;
     margin: 5px;
-}
-
-.pags{
-    width: 100%;
-    text-align: center;
-    border: outset map-get($clrs , gld);
 }
 
 /* contacto */
